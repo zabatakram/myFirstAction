@@ -4,3 +4,20 @@ on:
   push: 
     branches:
       - main
+jobs:
+  test:
+    runs-on: ubuntu_latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Run a one-line script
+        run : echo Hello, World!
+  test2:
+    runs-on: ubuntu_latest
+    needs: [test]
+    steps:
+      - uses: actions/checkout@v2
+      
+      
+    
